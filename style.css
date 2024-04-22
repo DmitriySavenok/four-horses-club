@@ -1,0 +1,162 @@
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables  */
+
+:root {
+  /* Colors */
+  --text-color-light: #fff;
+  --text-color-dark: #313131;
+  --btn-bg: #1F1F1F;
+  --btn-fill-hover: #FBCE51;
+  --brown-light: #595653;
+  --bg-light: #E9DED4;
+  --red: #F54932;
+
+  /* Fonts */
+  --title-font: "Merriweather", serif;
+  --regular-font: "Golos Text", sans-serif;;
+}
+
+/* General styles */
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1222px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.button {
+  width: 263px;
+  border-radius: 66px;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  font-family: var(--regular-font);
+  transition: background ease 0.4s, color ease 0.4s;
+}
+
+.button--fill {
+  background: var(--btn-bg);
+  color: var(--text-color-light);
+}
+
+.button--transparent {
+  background: transparent;
+  border: 2px solid var(--btn-bg);
+  color: var(--btn-bg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button--fill:hover {
+    background: var(--btn-fill-hover);
+    color: var(--btn-bg);
+  }
+
+  .button--transparent:hover {
+    background: var(--btn-bg);
+    color: var(--text-color-light);
+  }
+}
+
+/* Header */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  padding-top: 28px;
+}
+
+.header__logo {
+  grid-column: 1 / 4;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--brown-light);
+  text-transform: uppercase;
+  font-family: var(--regular-font);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 108%;
+}
+
+/* Ticker */
+
+.ticker {
+  background-color: var(--red);
+}
+
+.ticker ul {
+  padding: 18px 0;
+  display: flex;
+  gap: 30px;
+  color: var(--text-color-light);
+  font-weight: var(--title-font);
+  font-size: 22px;
+  line-height: 110%;
+  overflow-x: hidden;
+  text-transform: uppercase;
+}
+
+.ticker ul li {
+  white-space: nowrap;
+}
+
+/* Hero */
+
+.hero {
+  background-color: var(--bg-light);
+}
+
+.hero__content {
+  padding-top: 124px;
+  padding-bottom: 130px;
+  grid-column: 1 / 7;
+}
+
+.hero__title {
+  color: var(--text-color-dark);
+  font-family: var(--title-font);
+  font-size: 60px;
+  line-height: 110%;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+}
+
+.hero__title span {
+  display: block;
+  width: 95%;
+}
+
+.hero__title span:last-child {
+  text-align: center;
+}
+
+.hero__description {
+  width: 90%;
+  padding: 24px 0 40px 0;
+  font-family: var(--regular-font);
+  font-size: 18px;
+  /* line-height: 130%; */
+  font-weight: 400;
+  text-align: center;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 16px;
+}
